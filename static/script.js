@@ -5,16 +5,33 @@ document.addEventListener("DOMContentLoaded", async () => {
         const tableBody = document.getElementById('leaderboard-data');
 
         // Sort data first by "Completion of Chapter And Arcade" ("Yes" first), then by "No. of Chapter Completed"
-        data.sort((a, b) => {
-            if (a["All Skill Badges & Games Completed"] === "Yes" && b["All Skill Badges & Games Completed"] !== "Yes") {
-                return -1;
-            } else if (a["All Skill Badges & Games Completed"] !== "Yes" && b["All Skill Badges & Games Completed"] === "Yes") {
-                return 1;
-            } 
-            const noOfChaptersA = (a["Names of Completed Skill Badges"].match(/\[Skill Badge\]/g) || []).length;
-            const noOfChaptersB = (b["Names of Completed Skill Badges"].match(/\[Skill Badge\]/g) || []).length;
-            return noOfChaptersB - noOfChaptersA;
-        });
+        // Sort data by "Completion of Chapter And Arcade" ("Yes" first), then by "No. of Chapter Completed",
+// and finally by "Access Code Redemption Status" ("Yes" first).
+data.sort((a, b) => {
+    // Sort by "Completion of Chapter And Arcade"
+    if (a["All Skill Badges & Games Completed"] === "Yes" && b["All Skill Badges & Games Completed"] !== "Yes") {
+        return -1;
+    } else if (a["All Skill Badges & Games Completed"] !== "Yes" && b["All Skill Badges & Games Completed"] === "Yes") {
+        return 1;
+    }
+
+    // Sort by "No. of Chapter Completed" if "Completion of Chapter And Arcade" is the same
+    const noOfChaptersA = (a["Names of Completed Skill Badges"].match(/\[Skill Badge\]/g) || []).length;
+    const noOfChaptersB = (b["Names of Completed Skill Badges"].match(/\[Skill Badge\]/g) || []).length;
+    if (noOfChaptersA !== noOfChaptersB) {
+        return noOfChaptersB - noOfChaptersA; // Descending order by chapters completed
+    }
+
+    // Sort by "Access Code Redemption Status" if both previous criteria are the same
+    if (a["Access Code Redemption Status"] === "Yes" && b["Access Code Redemption Status"] !== "Yes") {
+        return -1;
+    } else if (a["Access Code Redemption Status"] !== "Yes" && b["Access Code Redemption Status"] === "Yes") {
+        return 1;
+    }
+
+    return 0; // If all criteria are the same, maintain the order
+});
+
 
         // Calculate eligible participants for swags and certificates
         let eligibleParticipantsCount = 0;
