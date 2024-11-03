@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, render_template
 import pandas as pd
 import numpy as np
-import os
 
 app = Flask(__name__)
 
@@ -14,9 +13,8 @@ def index():
 @app.route('/leaderboard', methods=['GET'])
 def leaderboard():
     try:
-        # Load the CSV file from the current directory
-        csv_path = os.path.join(os.path.dirname(__file__), "C. K. Pithawala College of Engineering and Technology - Surat, India [16 Oct].csv")
-        df = pd.read_csv(csv_path)
+        # Load the new CSV file
+        df = pd.read_csv("C. K. Pithawala College of Engineering and Technology - Surat, India [03 Nov].csv")
         
         # Replace NaN values with empty strings for JSON compatibility
         df = df.replace({np.nan: ""})
