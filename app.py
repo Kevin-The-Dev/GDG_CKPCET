@@ -14,7 +14,7 @@ def index():
 def leaderboard():
     try:
         # Load the new CSV file
-        df = pd.read_csv("CSV Files/C. K. Pithawala College of Engineering and Technology - Surat, India [12 Nov].csv")
+        df = pd.read_csv("CSV Files/C. K. Pithawala College of Engineering and Technology - Surat, India [13 Nov].csv")
         
         # Replace NaN values with empty strings for JSON compatibility
         df = df.replace({np.nan: ""})
