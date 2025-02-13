@@ -20,7 +20,11 @@ This leaderboard was created as part of the **Google Cloud Study Jam** organized
 - **No of Eligible Participants for Swags and Certificates**: 65
 - **No of Eligible Participants for Certificates**: 65
 - **Total No of Participants**: 139
-## GDG CKPCET Information
+
+ ## 💻 Automatic Leaderboard Updates
+
+Every time a new CSV file is uploaded, the leaderboard **automatically updates** to reflect the latest data, ensuring it is always up to date!
+
 
 - **Google Developer Group (GDG)** at CKPCET is a student-led community focused on Google technologies like Cloud, Android, Firebase, Machine Learning, and more.
 - Follow us on **[LinkedIn](https://www.linkedin.com/company/google-developer-groups-on-campus-ckpcet/)** and **[Instagram](https://www.instagram.com/gdg_ckpcet?igsh=YXl4cXVucTMwbmhj)**.
