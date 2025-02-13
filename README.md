@@ -25,6 +25,7 @@ This leaderboard was created as part of the **Google Cloud Study Jam** organized
 
 Every time a new CSV file is uploaded, the leaderboard **automatically updates** to reflect the latest data, ensuring it is always up to date!
 
+## GDG CKPCET Information
 
 - **Google Developer Group (GDG)** at CKPCET is a student-led community focused on Google technologies like Cloud, Android, Firebase, Machine Learning, and more.
 - Follow us on **[LinkedIn](https://www.linkedin.com/company/google-developer-groups-on-campus-ckpcet/)** and **[Instagram](https://www.instagram.com/gdg_ckpcet?igsh=YXl4cXVucTMwbmhj)**.
